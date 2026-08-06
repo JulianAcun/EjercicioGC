@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>TecnoRepuestos PC — Catálogo de Componentes Nuevos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--
+    ============================================================
+    EJERCICIO "GRAN COMEDOR" — VERSIÓN PERSONALIZADA
+    ------------------------------------------------------------
+    El ejercicio original (Hogwarts / lunchmenu-dinnermenu) usaba
+    DOS páginas HTML casi idénticas en estructura y estilo, donde
+    únicamente cambia el TEXTO del contenido. La navegación entre
+    ambas se hace con enlaces normales <a href="archivo.html">,
+    SIN JavaScript: al pulsar el enlace, el navegador simplemente
+    carga el otro archivo .html.
+
+    Aquí personalicé el tema: en vez de un comedor mágico, es una
+    tienda de repuestos de computador ("TecnoRepuestos PC").
+    En vez de Almuerzo/Cena, las dos "vistas" del catálogo son:
+        - Componentes Nuevos   (este archivo)
+        - Componentes Usados   (componentes-usados.html)
+
+    Ambos archivos comparten el mismo <head>/<style>, el mismo
+    <header> con imagen y navegación, y la misma estructura de
+    <section> en el <main>. Lo único que cambia es el contenido
+    de texto de cada sección (justo lo que pedía el ejercicio).
+    ============================================================
+  -->
+
+  <style>
+    /* CSS simple y didáctico, con paleta "tecnológica" (azul + ámbar) */
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0; padding: 0;
+      color: #1e293b;
+      background: #f4f6f8;
+    }
+    header, main, footer { max-width: 800px; margin: 0 auto; padding: 16px; }
+
+    /* Header oscuro tipo "placa base" para diferenciarlo del original */
+    header { background: #0b1f3a; color: #f1f5f9; }
+    header h1, header h2 { color: #f1f5f9; }
+
+    h1 { margin: 0 0 6px; font-size: 1.5rem; }
+    h2 { margin: 8px 0 0; font-size: 1.1rem; font-weight: normal; color: #cbd5e1; }
+    section { margin: 16px 0; }
+
+    /* Recuadro de aviso, mismo rol que en el ejercicio original
+       pero con acento ámbar en vez de azul */
+    .nota { background: #fff7ed; border-left: 4px solid #f59e0b; padding: 8px 10px; }
+
+    ul, ol { margin: .5rem 0 .5rem 1.25rem; }
+    /* La imagen original es muy grande: se limita la altura para que
+       no ocupe toda la pantalla y el resto del contenido sea visible */
+    img { max-width: 100%; max-height: 220px; height: auto; display: block; margin: 8px auto; }
+
+    /* Enlaces de navegación entre las dos páginas del catálogo */
+    nav a { margin-right: 8px; color: #38bdf8; text-decoration: none; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    /* El enlace de la página en la que estamos se marca distinto
+       usando aria-current="page" (ver más abajo en el <nav>) */
+    nav a[aria-current="page"] { color: #f1f5f9; text-decoration: underline; }
+
+    .footnote { font-size: .9rem; color: #555; }
+    .precio { color: #0b1f3a; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+  <!--
+    HEADER: se repite igual en las dos páginas (misma imagen, mismo
+    título de tienda, mismo <nav>). Es la parte "constante" del
+    ejercicio: lo que NO cambia entre una página y otra.
+  -->
+  <header>
+    <img src="Images/aa772b35cc063f9a96267dad9ff1a58e.jpg"
+         alt="Ilustración de componentes de computador: gabinete, monitor, memoria RAM, tarjeta gráfica, procesador, placa madre, disco duro, teclado y mouse">
+    <h1>TecnoRepuestos PC</h1>
+    <h2>Catálogo de Componentes Nuevos</h2>
+
+    <!--
+      NAV: los dos enlaces son el corazón del ejercicio.
+      Al pulsar "Usados" el navegador carga componentes-usados.html.
+      aria-current="page" le indica a lectores de pantalla (y sirve
+      de referencia visual con el CSS de arriba) cuál es la página activa.
+    -->
+    <nav aria-label="Navegación del catálogo">
+      <a href="componentes-nuevos.html" aria-current="page">Nuevos</a> |
+      <a href="componentes-usados.html">Usados</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Sección de avisos importantes de la tienda -->
+    <section aria-labelledby="info-titulo" class="nota">
+      <h3 id="info-titulo">Información importante</h3>
+      <p>En TecnoRepuestos PC manejamos componentes <strong>nuevos y sellados</strong>, con factura y garantía de fábrica.</p>
+      <p>Todos los precios están en pesos colombianos e incluyen <abbr title="Impuesto al Valor Agregado">IVA</abbr>.</p>
+      <p>Horario de atención: de lunes a sábado, de
+        <time datetime="08:00">8:00 a. m.</time> a
+        <time datetime="18:00">6:00 p. m.</time>.
+        Las <strong>instalaciones a domicilio</strong> se agendan hasta las
+        <time datetime="17:00">5:00 p. m.</time>.
+      </p>
+      <p><em>Recuerda que la garantía de fábrica solo aplica presentando la factura de compra.</em></p>
+    </section>
+
+    <!-- Lista ordenada: catálogo principal (equivalente a las "opciones de almuerzo") -->
+    <section aria-labelledby="opciones-titulo">
+      <h3 id="opciones-titulo">Componentes disponibles</h3>
+      <p>Todo nuestro stock nuevo incluye caja sellada, manual y <strong>garantía de 12 meses</strong>.</p>
+      <ol>
+        <li>Procesador (CPU) Intel/AMD — <span class="precio">$450.000</span></li>
+        <li>Tarjeta gráfica (GPU) — <span class="precio">$1.200.000</span></li>
+        <li>Memoria RAM 16GB — <span class="precio">$180.000</span></li>
+        <li>Disco de estado sólido (SSD) 1TB — <span class="precio">$220.000</span></li>
+        <li>Placa madre (Motherboard) — <span class="precio">$380.000</span></li>
+      </ol>
+    </section>
+
+    <!-- Lista sin orden: accesorios (equivalente a "Postres") -->
+    <section aria-labelledby="accesorios-titulo">
+      <h3 id="accesorios-titulo">Accesorios</h3>
+      <ul>
+        <li>Teclado mecánico</li>
+        <li>Mouse óptico gamer</li>
+        <li>Cooler / ventilador para gabinete</li>
+        <li>Gabinete con panel lateral en vidrio</li>
+      </ul>
+    </section>
+
+    <!-- Lista sin orden: servicios adicionales (equivalente a "Bebidas") -->
+    <section aria-labelledby="servicios-titulo">
+      <h3 id="servicios-titulo">Servicios adicionales</h3>
+      <ul>
+        <li>Armado de PC a la medida</li>
+        <li>Instalación a domicilio</li>
+        <li>Diagnóstico técnico gratuito</li>
+        <li>Garantía extendida (24 meses)</li>
+        <li>Asesoría para elegir componentes compatibles</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <h4>Ubicación</h4>
+    <address>
+      TecnoRepuestos PC<br>
+      Calle 45 # 12-30, Bogotá, Colombia
+    </address>
+    <p class="footnote" id="nota1"><sup>1</sup> Los precios pueden variar según disponibilidad de stock.</p>
+  </footer>
+</body>
+</html>

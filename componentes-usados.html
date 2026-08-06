@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>TecnoRepuestos PC — Catálogo de Componentes Usados</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--
+    ============================================================
+    Esta es la SEGUNDA página del ejercicio "Gran Comedor"
+    personalizado (ver comentario completo en componentes-nuevos.html).
+
+    Fíjate que el <head>, el <style> y el <header> son PRÁCTICAMENTE
+    IDÉNTICOS a los de componentes-nuevos.html. Eso es intencional:
+    el ejercicio busca que el DISEÑO se mantenga igual y que SOLO
+    cambie el contenido de texto dentro de <main>.
+
+    Diferencias reales con la otra página:
+      1) El <title> cambia (Nuevos -> Usados).
+      2) El <h2> del header cambia (Nuevos -> Usados).
+      3) En el <nav>, el atributo aria-current="page" ahora está
+         en el enlace "Usados" (porque estamos parados aquí).
+      4) El contenido de las secciones (avisos, catálogo,
+         accesorios, servicios) tiene textos distintos.
+    ============================================================
+  -->
+
+  <style>
+    /* Mismo CSS que componentes-nuevos.html: así se conserva
+       el mismo "look" en ambas páginas del catálogo. */
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0; padding: 0;
+      color: #1e293b;
+      background: #f4f6f8;
+    }
+    header, main, footer { max-width: 800px; margin: 0 auto; padding: 16px; }
+
+    header { background: #0b1f3a; color: #f1f5f9; }
+    header h1, header h2 { color: #f1f5f9; }
+
+    h1 { margin: 0 0 6px; font-size: 1.5rem; }
+    h2 { margin: 8px 0 0; font-size: 1.1rem; font-weight: normal; color: #cbd5e1; }
+    section { margin: 16px 0; }
+
+    .nota { background: #fff7ed; border-left: 4px solid #f59e0b; padding: 8px 10px; }
+
+    ul, ol { margin: .5rem 0 .5rem 1.25rem; }
+    /* La imagen original es muy grande: se limita la altura para que
+       no ocupe toda la pantalla y el resto del contenido sea visible */
+    img { max-width: 100%; max-height: 220px; height: auto; display: block; margin: 8px auto; }
+
+    nav a { margin-right: 8px; color: #38bdf8; text-decoration: none; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    nav a[aria-current="page"] { color: #f1f5f9; text-decoration: underline; }
+
+    .footnote { font-size: .9rem; color: #555; }
+    .precio { color: #0b1f3a; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+  <!-- Header idéntico al de componentes-nuevos.html, salvo el <h2>
+       y el enlace marcado como activo en el <nav> (ver más abajo) -->
+  <header>
+    <img src="Images/aa772b35cc063f9a96267dad9ff1a58e.jpg"
+         alt="Ilustración de componentes de computador: gabinete, monitor, memoria RAM, tarjeta gráfica, procesador, placa madre, disco duro, teclado y mouse">
+    <h1>TecnoRepuestos PC</h1>
+    <h2>Catálogo de Componentes Usados</h2>
+
+    <!-- Mismo <nav> que la otra página; aquí "Usados" lleva aria-current
+         porque es la página en la que estamos parados actualmente -->
+    <nav aria-label="Navegación del catálogo">
+      <a href="componentes-nuevos.html">Nuevos</a> |
+      <a href="componentes-usados.html" aria-current="page">Usados</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Avisos importantes, con textos propios de la sección de usados -->
+    <section aria-labelledby="info-titulo" class="nota">
+      <h3 id="info-titulo">Información importante</h3>
+      <p>Los componentes usados fueron <strong>revisados y probados</strong> antes de ponerlos a la venta.</p>
+      <p>Todos los precios están en pesos colombianos e incluyen <abbr title="Impuesto al Valor Agregado">IVA</abbr>.</p>
+      <p>El horario de revisión técnica es de
+        <time datetime="09:00">9:00 a. m.</time> a
+        <time datetime="16:00">4:00 p. m.</time>.
+        Después de esa hora solo se reciben <strong>equipos para diagnóstico</strong>.
+      </p>
+      <p><em>La garantía de estos productos es limitada y cubre únicamente defectos de funcionamiento, no daños físicos.</em></p>
+    </section>
+
+    <!-- Catálogo principal de usados -->
+    <section aria-labelledby="opciones-titulo">
+      <h3 id="opciones-titulo">Componentes disponibles</h3>
+      <p>Todo el stock usado incluye <strong>garantía limitada de 30 días</strong> y prueba de funcionamiento en tienda.</p>
+      <ol>
+        <li>Procesador (CPU) Intel/AMD (usado) — <span class="precio">$180.000</span></li>
+        <li>Tarjeta gráfica (GPU) reacondicionada — <span class="precio">$650.000</span></li>
+        <li>Memoria RAM 8GB (usada) — <span class="precio">$60.000</span></li>
+        <li>Disco duro (HDD) 1TB (usado) — <span class="precio">$90.000</span></li>
+        <li>Placa madre (Motherboard) reacondicionada — <span class="precio">$150.000</span></li>
+      </ol>
+    </section>
+
+    <!-- Accesorios usados -->
+    <section aria-labelledby="accesorios-titulo">
+      <h3 id="accesorios-titulo">Accesorios</h3>
+      <ul>
+        <li>Teclado de membrana (usado)</li>
+        <li>Mouse óptico (usado)</li>
+        <li>Cables y adaptadores varios</li>
+        <li>Gabinete usado, sin fuente incluida</li>
+      </ul>
+    </section>
+
+    <!-- Servicios asociados a los productos usados -->
+    <section aria-labelledby="servicios-titulo">
+      <h3 id="servicios-titulo">Servicios adicionales</h3>
+      <ul>
+        <li>Diagnóstico gratuito antes de la compra</li>
+        <li>Limpieza y mantenimiento de equipos usados</li>
+        <li>Cambio de pasta térmica</li>
+        <li>Garantía limitada de 30 días</li>
+        <li>Recompra de tus componentes viejos</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <h4>Ubicación</h4>
+    <address>
+      TecnoRepuestos PC<br>
+      Calle 45 # 12-30, Bogotá, Colombia
+    </address>
+    <p class="footnote" id="nota1"><sup>1</sup> Los componentes usados no se pueden mezclar con la garantía de fábrica de los productos nuevos.</p>
+  </footer>
+</body>
+</html>
