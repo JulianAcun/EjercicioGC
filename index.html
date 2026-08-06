@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>TecnoRepuestos PC — Inicio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--
+    ============================================================
+    index.html — PÁGINA DE INICIO PARA GITHUB PAGES
+    ------------------------------------------------------------
+    GitHub Pages, al publicar un sitio, busca automáticamente un
+    archivo llamado "index.html" en la raíz del repositorio (o de
+    la carpeta configurada) y lo sirve como la página principal
+    cuando alguien entra a la URL del sitio (ej: usuario.github.io/repo/).
+
+    Sin este archivo, GitHub Pages no sabría qué mostrar al entrar
+    a la raíz del sitio: habría que escribir manualmente el nombre
+    del .html (ej: /componentes-nuevos.html), lo cual no es una
+    buena experiencia para quien visita la página.
+
+    Este index.html NO reemplaza el ejercicio de las dos páginas
+    (componentes-nuevos.html / componentes-usados.html): es una
+    portada sencilla que dá la bienvenida y enlaza hacia esas dos
+    páginas, que siguen siendo el corazón del ejercicio (enlaces
+    que cambian el contenido).
+    ============================================================
+  -->
+
+  <style>
+    /* Mismo CSS "tecnológico" de las otras dos páginas, para que
+       la portada se vea como parte del mismo sitio */
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0; padding: 0;
+      color: #1e293b;
+      background: #f4f6f8;
+    }
+    header, main, footer { max-width: 800px; margin: 0 auto; padding: 16px; }
+
+    header { background: #0b1f3a; color: #f1f5f9; }
+    header h1, header h2 { color: #f1f5f9; }
+
+    h1 { margin: 0 0 6px; font-size: 1.5rem; }
+    h2 { margin: 8px 0 0; font-size: 1.1rem; font-weight: normal; color: #cbd5e1; }
+    section { margin: 16px 0; }
+
+    .nota { background: #fff7ed; border-left: 4px solid #f59e0b; padding: 8px 10px; }
+
+    img { max-width: 100%; max-height: 220px; height: auto; display: block; margin: 8px auto; }
+
+    /* Tarjetas de acceso a cada catálogo (Nuevos / Usados) */
+    .accesos { display: flex; gap: 16px; flex-wrap: wrap; }
+    .tarjeta {
+      flex: 1 1 220px;
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 16px;
+      text-align: center;
+    }
+    .tarjeta h3 { margin-top: 0; }
+    .tarjeta a {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 8px 16px;
+      background: #0b1f3a;
+      color: #f1f5f9;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+    .tarjeta a:hover { background: #14304f; }
+
+    .footnote { font-size: .9rem; color: #555; }
+  </style>
+</head>
+<body>
+
+  <!-- Header de bienvenida, sin <nav> porque aquí no hay dos
+       "vistas" que alternar: esta es solo la portada del sitio -->
+  <header>
+    <img src="Images/aa772b35cc063f9a96267dad9ff1a58e.jpg"
+         alt="Ilustración de componentes de computador: gabinete, monitor, memoria RAM, tarjeta gráfica, procesador, placa madre, disco duro, teclado y mouse">
+    <h1>TecnoRepuestos PC</h1>
+    <h2>Repuestos y componentes de computador</h2>
+  </header>
+
+  <main>
+    <section aria-labelledby="bienvenida-titulo" class="nota">
+      <h3 id="bienvenida-titulo">Bienvenido</h3>
+      <p>Aquí encuentras <strong>componentes nuevos</strong> con garantía de fábrica y <strong>componentes usados</strong> revisados y con garantía limitada. Elige un catálogo para ver los productos disponibles.</p>
+    </section>
+
+    <!-- Estos dos enlaces son la puerta de entrada al ejercicio
+         "Gran Comedor" personalizado: al pulsarlos, el navegador
+         carga componentes-nuevos.html o componentes-usados.html -->
+    <section aria-labelledby="catalogos-titulo">
+      <h3 id="catalogos-titulo">Catálogos</h3>
+      <div class="accesos">
+        <div class="tarjeta">
+          <h3>Componentes Nuevos</h3>
+          <p>Productos sellados con garantía de fábrica.</p>
+          <a href="componentes-nuevos.html">Ver catálogo</a>
+        </div>
+        <div class="tarjeta">
+          <h3>Componentes Usados</h3>
+          <p>Productos revisados con garantía limitada de 30 días.</p>
+          <a href="componentes-usados.html">Ver catálogo</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <h4>Ubicación</h4>
+    <address>
+      TecnoRepuestos PC<br>
+      Calle 45 # 12-30, Bogotá, Colombia
+    </address>
+    <p class="footnote">Sitio creado como ejercicio de práctica de HTML/CSS.</p>
+  </footer>
+</body>
+</html>
